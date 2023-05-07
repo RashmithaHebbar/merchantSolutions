@@ -1,6 +1,6 @@
 package com.example.demo;
 
-public class signalOne implements SignalHandler {
+public class SignalOne implements SignalHandler {
     @Override
     public void handleSignal(int signal) {
         Algo algo = new Algo();
