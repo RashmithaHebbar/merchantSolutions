@@ -17,13 +17,6 @@ class Application implements SignalHandler {
 		Algo algo = new Algo();
 
 		switch (signal) {
-
-			case 2:
-				algo.reverse();
-				algo.setAlgoParam(1,80);
-				algo.submitToMarket();
-				break;
-
 			case 3:
 				algo.setAlgoParam(1,90);
 				algo.setAlgoParam(2,15);
