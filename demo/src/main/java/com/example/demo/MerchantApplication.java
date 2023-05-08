@@ -16,13 +16,7 @@ class Application implements SignalHandler {
 	public void handleSignal(int signal) {
 		Algo algo = new Algo();
 
-		switch (signal) {
-			case 3:
-				algo.setAlgoParam(1,90);
-				algo.setAlgoParam(2,15);
-				algo.performCalc();
-				algo.submitToMarket();
-				break;
+		switch (signal){
 
 			default:
 				algo.cancelTrades();
