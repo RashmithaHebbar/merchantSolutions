@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.lib.Algo;
+import com.example.demo.lib.SignalHandler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,18 +14,4 @@ public class MerchantApplication {
 
 }
 
-class Application implements SignalHandler {
-	public void handleSignal(int signal) {
-		Algo algo = new Algo();
-
-		switch (signal){
-
-			default:
-				algo.cancelTrades();
-				break;
-		}
-
-		algo.doAlgo();
-	}
-}
 
