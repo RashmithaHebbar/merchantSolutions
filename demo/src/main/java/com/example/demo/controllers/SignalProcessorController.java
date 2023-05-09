@@ -1,3 +1,8 @@
+/**
+ * Controller that handles the signal
+ * @param  signalId  signal id of the signal needed to be executed
+ * @return      Http response
+ */
 package com.example.demo.controllers;
 
 import com.example.demo.services.SignalProcessor;
