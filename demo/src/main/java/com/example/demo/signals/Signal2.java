@@ -1,18 +1,16 @@
-package com.example.demo.service;
+package com.example.demo.signals;
 
 import com.example.demo.lib.Algo;
 import com.example.demo.lib.SignalHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Signal1 implements SignalHandler {
+public class Signal2 implements SignalHandler {
     @Override
     public void handleSignal(int signal) {
         Algo algo = new Algo();
-
-        algo.setUp();
-        algo.setAlgoParam(1, 60);
-        algo.performCalc();
+        algo.reverse();
+        algo.setAlgoParam(1,80);
         algo.submitToMarket();
     }
 }

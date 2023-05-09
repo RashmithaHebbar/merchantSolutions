@@ -1,11 +1,11 @@
-package com.example.demo.service;
+package com.example.demo.services;
 
-import com.example.demo.lib.Algo;
 import com.example.demo.lib.SignalHandler;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.example.demo.signals.DefaultSignal;
+import com.example.demo.signals.Signal1;
+import com.example.demo.signals.Signal2;
+import com.example.demo.signals.Signal3;
 import org.springframework.stereotype.Service;
-import sun.misc.Signal;
 
 import java.util.HashMap;
 import java.util.Map;
