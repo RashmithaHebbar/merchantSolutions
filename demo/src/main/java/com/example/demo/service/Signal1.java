@@ -11,7 +11,7 @@ public class Signal1 implements SignalHandler {
         Algo algo = new Algo();
 
         algo.setUp();
-        algo.setAlgoParam(1,60);
+        algo.setAlgoParam(1, 60);
         algo.performCalc();
         algo.submitToMarket();
     }

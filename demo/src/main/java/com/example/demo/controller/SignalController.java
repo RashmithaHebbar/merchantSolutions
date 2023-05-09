@@ -1,23 +1,28 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.SignalService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Data;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
-
 @RestController
+@Data
 public class SignalController {
+    private final SignalService signalService;
 
-    @Autowired
-    private SignalService signalService;
-        @GetMapping("/{signal-id}")
-        public void one(@PathVariable int id) {
-
-            signalService.handleSignal(id);
+    @PostMapping("/signal")
+    public ResponseEntity<String> handleSignal(@RequestParam int signal) {
+        try {
+            signalService.handleSignal(signal);
+            return ResponseEntity.ok("Signal processed successfully");
+        } catch (IllegalArgumentException ex) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid signal");
+        } catch (Exception ex) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error processing signal");
         }
-
+    }
 }
+
