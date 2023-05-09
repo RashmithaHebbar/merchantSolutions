@@ -5,11 +5,14 @@ import com.example.demo.lib.SignalHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Signal1 implements SignalHandler {
+public class Signal1 implements ISignal {
     @Override
-    public void handleSignal(int signal) {
-        Algo algo = new Algo();
-
+    public int value() {
+        return 1;
+    }
+    @Override
+    public void execute(Algo algo) {
+        System.out.println("executing signal 1");
         algo.setUp();
         algo.setAlgoParam(1, 60);
         algo.performCalc();

@@ -1,15 +1,18 @@
 package com.example.demo.signals;
 
 import com.example.demo.lib.Algo;
-import com.example.demo.lib.SignalHandler;
 import org.springframework.stereotype.Component;
 
 //Default signal class
 @Component
-public class DefaultSignal implements SignalHandler {
+public class DefaultSignal implements ISignal {
     @Override
-    public void handleSignal(int signal) {
-        Algo algo = new Algo();
+    public int value() {
+        return -1;
+    }
+    @Override
+    public void execute(Algo algo) {
+        System.out.println("Default Signal");
         algo.cancelTrades();
     }
 }

@@ -1,6 +1,5 @@
 package com.example.demo.controllers;
 
-import com.example.demo.services.SignalService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
