@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SignalController {
     private final SignalService signalService;
 
+    //Here {signal} takes 1,2,3 signals currently
     @PostMapping("/signal")
     public ResponseEntity<String> handleSignal(@RequestParam int signal) {
         try {
