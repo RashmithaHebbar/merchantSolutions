@@ -21,6 +21,9 @@ public class SignalService {
         signalHandlerMap.put(3, new Signal3());
     }
 
+    public SignalService(Map<Integer, SignalHandler> signalHandlerMap) {
+    }
+
     public void handleSignal(int signal) {
         SignalHandler signalHandler = signalHandlerMap.getOrDefault(signal, null);
         if (signalHandler != null) {
